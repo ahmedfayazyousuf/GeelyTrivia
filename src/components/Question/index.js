@@ -29,11 +29,11 @@ const Q50Q2 = () => {
             document.getElementById(e).style.background = "white";
             document.getElementById(e).style.color = "black";
             document.getElementById('option2').style.background = "transparent";
-            document.getElementById('option2').style.color = "black";
+            document.getElementById('option2').style.color = "white";
             document.getElementById('option3').style.background = "transparent";
-            document.getElementById('option3').style.color = "black";
+            document.getElementById('option3').style.color = "white";
             document.getElementById('option4').style.background = "transparent";
-            document.getElementById('option4').style.color = "black";
+            document.getElementById('option4').style.color = "white";
             setBool(false);
         }
 
@@ -41,11 +41,11 @@ const Q50Q2 = () => {
             document.getElementById(e).style.background = "white";
             document.getElementById(e).style.color = "black";
             document.getElementById('option1').style.background = "transparent";
-            document.getElementById('option1').style.color = "black";
-            document.getElementById('option3').style.color = "black";
+            document.getElementById('option1').style.color = "white";
+            document.getElementById('option3').style.color = "white";
             document.getElementById('option3').style.background = "transparent";
             document.getElementById('option4').style.background = "transparent";
-            document.getElementById('option4').style.color = "black";
+            document.getElementById('option4').style.color = "white";
             setBool(false);
         }
 
@@ -53,11 +53,11 @@ const Q50Q2 = () => {
             document.getElementById(e).style.background = "white";
             document.getElementById(e).style.color = "black";
             document.getElementById('option1').style.background = "transparent";
-            document.getElementById('option1').style.color = "black";
+            document.getElementById('option1').style.color = "white";
             document.getElementById('option2').style.background = "transparent";
-            document.getElementById('option2').style.color = "black";
+            document.getElementById('option2').style.color = "white";
             document.getElementById('option4').style.background = "transparent";
-            document.getElementById('option4').style.color = "black";
+            document.getElementById('option4').style.color = "white";
             setBool(true);
         }
 
@@ -65,11 +65,11 @@ const Q50Q2 = () => {
             document.getElementById(e).style.background = "white";
             document.getElementById(e).style.color = "black";
             document.getElementById('option1').style.background = "transparent";
-            document.getElementById('option1').style.color = "black";
+            document.getElementById('option1').style.color = "white";
             document.getElementById('option2').style.background = "transparent";
-            document.getElementById('option2').style.color = "black";
+            document.getElementById('option2').style.color = "white";
             document.getElementById('option3').style.background = "transparent";
-            document.getElementById('option3').style.color = "black";
+            document.getElementById('option3').style.color = "white";
             setBool(false);
         }
     }
