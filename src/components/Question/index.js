@@ -26,8 +26,8 @@ const Q50Q2 = () => {
   
     function Handleclick(e){
         if(e === 'option1'){
-            document.getElementById(e).style.background = "black";
-            document.getElementById(e).style.color = "white";
+            document.getElementById(e).style.background = "white";
+            document.getElementById(e).style.color = "black";
             document.getElementById('option2').style.background = "transparent";
             document.getElementById('option2').style.color = "black";
             document.getElementById('option3').style.background = "transparent";
@@ -38,8 +38,8 @@ const Q50Q2 = () => {
         }
 
         if(e === 'option2'){
-            document.getElementById(e).style.background = "black";
-            document.getElementById(e).style.color = "white";
+            document.getElementById(e).style.background = "white";
+            document.getElementById(e).style.color = "black";
             document.getElementById('option1').style.background = "transparent";
             document.getElementById('option1').style.color = "black";
             document.getElementById('option3').style.color = "black";
@@ -50,8 +50,8 @@ const Q50Q2 = () => {
         }
 
         if(e === 'option3'){
-            document.getElementById(e).style.background = "black";
-            document.getElementById(e).style.color = "white";
+            document.getElementById(e).style.background = "white";
+            document.getElementById(e).style.color = "black";
             document.getElementById('option1').style.background = "transparent";
             document.getElementById('option1').style.color = "black";
             document.getElementById('option2').style.background = "transparent";
@@ -62,8 +62,8 @@ const Q50Q2 = () => {
         }
 
         if(e === 'option4'){
-            document.getElementById(e).style.background = "black";
-            document.getElementById(e).style.color = "white";
+            document.getElementById(e).style.background = "white";
+            document.getElementById(e).style.color = "black";
             document.getElementById('option1').style.background = "transparent";
             document.getElementById('option1').style.color = "black";
             document.getElementById('option2').style.background = "transparent";
@@ -137,29 +137,29 @@ const Q50Q2 = () => {
 
 return(
     <div style={{display:"flex", flexDirection:"column", width:"100%", height: "100vh", justifyContent:"center", alignItems:"center"}}>
-        <div style={{display: 'flex', flexDirection: 'column', width: '40%', gap:'5px', alignItems: 'center', justifyContent:'center', height: '100vh'}}>
+        <div style={{display: 'flex', flexDirection: 'column', gap:'5px', alignItems: 'center', justifyContent:'center', height: '100vh'}}>
 
-            <div style={{display: 'flex', flexDirection: 'column', justifyContent: 'center', alignItems: 'center', marginBottom: '10px'}}>
+            <div style={{display: 'flex', flexDirection: 'column', justifyContent: 'center', alignItems: 'center', marginBottom: '-10px'}}>
                 <img style={{width: '320px'}} src={frame} alt="Geely Logo"/>
             </div>
 
-            <div style={{display: 'flex', flexDirection: 'column', justifyContent: 'center', alignItems: 'center', width: '100vw', marginBottom:'10px'}}>
+            <div style={{display: 'flex', flexDirection: 'column', justifyContent: 'center', alignItems: 'center', width: '100vw', marginBottom: '-30px'}}>
                 <h1 className="header" >TRIVIA GAME</h1>
             </div>
 
             <div style={{display: 'flex', flexDirection: 'column', textAlign: 'center', margin: '0', padding: '0', paddingLeft: '30px', paddingRight: '30px'}} >
-                <p style={{fontSize: '15px', marginTop: '10px'}} >Which engine powers the INFINITI Q50?</p>
+                <p style={{fontSize: '15px', color: 'white'}} >What is the country of origin for Geely Auto? </p>
             </div>
 
             <div className="slotparent"  style={{display: 'flex', flexDirection: 'column', justifyContent: 'center', alignItems:'center', width: '100%', marginTop: '15px'}}>
                     <div className="slotdiv" style={{display: 'flex', flexDirection: 'column', justifyContent: 'center', alignItems:'center', width: '90%', overflowX:'hidden'}} id='slotparent'>
-                        <button className="grab" id="option1" onClick={() => {Handleclick("option1")}} value="option1" style={{width:"280px", margin: '5px', border:'1px solid black', borderRadius: '20px', padding: '10px', color: 'black', backgroundColor: 'transparent', cursor: 'grab'}}>2.0L V6 Twin-Turbo</button>
-                        <button className="grab" id="option2" onClick={() => {Handleclick("option2")}} value="option2" style={{width:"280px", margin: '5px', border:'1px solid black', borderRadius: '20px', padding: '10px', color: 'black', backgroundColor: 'transparent', cursor: 'grab'}}>2.0L VC-Turbo</button>
-                        <button className="grab" id="option3" onClick={() => {Handleclick("option3")}} value="option3" style={{width:"280px", margin: '5px', border:'1px solid black', borderRadius: '20px', padding: '10px', color: 'black', backgroundColor: 'transparent', cursor: 'grab'}}>3.0L V6 Twin-Turbo</button>
-                        <button className="grab" id="option4" onClick={() => {Handleclick("option4")}} value="option4" style={{width:"280px", margin: '5px', border:'1px solid black', borderRadius: '20px', padding: '10px', color: 'black', backgroundColor: 'transparent', cursor: 'grab'}}>3.5L VC-Turbo</button>
+                        <button className="grab" id="option1" onClick={() => {Handleclick("option1")}} value="option1" style={{width:"280px", margin: '5px', border:'1px solid white', borderRadius: '20px', padding: '10px', color: 'white', backgroundColor: 'transparent', cursor: 'grab'}}>China</button>
+                        <button className="grab" id="option2" onClick={() => {Handleclick("option2")}} value="option2" style={{width:"280px", margin: '5px', border:'1px solid white', borderRadius: '20px', padding: '10px', color: 'white', backgroundColor: 'transparent', cursor: 'grab'}}>Japan</button>
+                        <button className="grab" id="option3" onClick={() => {Handleclick("option3")}} value="option3" style={{width:"280px", margin: '5px', border:'1px solid white', borderRadius: '20px', padding: '10px', color: 'white', backgroundColor: 'transparent', cursor: 'grab'}}>Germany</button>
+                        <button className="grab" id="option4" onClick={() => {Handleclick("option4")}} value="option4" style={{width:"280px", margin: '5px', border:'1px solid white', borderRadius: '20px', padding: '10px', color: 'white', backgroundColor: 'transparent', cursor: 'grab'}}>United States</button>
                     </div>
 
-                <button className="grab" style={{width:"220px", marginTop: '10px', marginBottom: '10px', borderRadius: '10px', padding: '10px', color: 'white', backgroundColor: 'black', cursor: 'grab'}} onClick={handleSubmit}>NEXT</button>
+                <button className="grab" style={{backgroundColor: '#002277', color: 'white', width: '150px', height: '37px' , border: '1px solid white', cursor: 'grab', marginTop: '20px'}} onClick={handleSubmit}>NEXT</button>
 
                 <div style={{display: 'flex', flexDirection: 'column', justifyContent: 'center', alignItems: 'center', marginTop: '35px'}}>
                     <img style={{width: '200px'}} src={logo2} alt="Geely Logo"/>
