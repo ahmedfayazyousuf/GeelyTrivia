@@ -1,5 +1,5 @@
 import '../Styles&Assets/style.css';
-import logo from '../Styles&Assets/logo.png';
+// import logo from '../Styles&Assets/logo.png';
 import logo2 from '../Styles&Assets/logo2.png';
 import tick from '../Styles&Assets/tick.png';
 import frame from '../Styles&Assets/LockupFrame.png'
