@@ -1,3 +1,4 @@
+import $ from 'jquery';
 import logo2 from '../Styles&Assets/logo2.png';
 import frame from '../Styles&Assets/LockupFrame.png'
 import React from "react";
@@ -23,7 +24,12 @@ const Q50Q2 = () => {
     //           }
     //     });
     // },[])
-  
+
+    var count = 60, timer = setInterval(function() {
+        $("#counter").html(count--);
+        if(count == 1) clearInterval(timer);
+    }, 1000);
+
     function Handleclick(e){
         if(e === 'option1'){
             document.getElementById(e).style.background = "white";
@@ -138,7 +144,8 @@ const Q50Q2 = () => {
 return(
     <div style={{display:"flex", flexDirection:"column", width:"100%", height: "100vh", justifyContent:"center", alignItems:"center"}}>
         <div style={{display: 'flex', flexDirection: 'column', gap:'5px', alignItems: 'center', justifyContent:'center', height: '100vh'}}>
-
+            
+            
             <div style={{display: 'flex', flexDirection: 'column', justifyContent: 'center', alignItems: 'center', marginBottom: '-10px'}}>
                 <img style={{width: '320px'}} src={frame} alt="Geely Logo"/>
             </div>
@@ -146,6 +153,8 @@ return(
             <div style={{display: 'flex', flexDirection: 'column', justifyContent: 'center', alignItems: 'center', width: '100vw', marginBottom: '-30px'}}>
                 <h1 className="header" >TRIVIA GAME</h1>
             </div>
+
+            <p style={{color: 'white', fontSize: '16px', marginBottom: '-5px'}}>Time: <span className='counter' id='counter'>60</span> Seconds</p>
 
             <div style={{display: 'flex', flexDirection: 'column', textAlign: 'center', margin: '0', padding: '0', paddingLeft: '30px', paddingRight: '30px'}} >
                 <p style={{fontSize: '15px', color: 'white'}} >What is the country of origin for Geely Auto? </p>
