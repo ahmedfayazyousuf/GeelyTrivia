@@ -14,10 +14,10 @@ function App() {
       <BrowserRouter>
         <Routes>
 
-            <Route exact path="/" element={<Error />} />
+            <Route exact path="/" element={<Registration />} />
             <Route exact path="*" element={<Error />} />
 
-            <Route path="/registration" element={<Registration />} />
+            {/* <Route path="/registration" element={<Registration />} /> */}
             <Route path="/question" element={<Question />} />
 
             <Route path="/success" element={<Success />} />
