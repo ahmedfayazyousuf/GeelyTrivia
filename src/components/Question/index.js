@@ -213,7 +213,7 @@ const Q50Q2 = () => {
 
                 Users.doc(location.state.id).update({
                     Time: firebase.firestore.FieldValue.serverTimestamp(),
-                    Score:score,
+                    Score:score+1,
                     // TimeTaken:time
                 })
 
