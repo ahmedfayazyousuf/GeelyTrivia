@@ -3,11 +3,15 @@ import logo2 from '../Styles&Assets/logo2.png';
 import frame from '../Styles&Assets/LockupFrame.png'
 import React, { useEffect } from "react";
 import { useState } from "react"
+import { useLocation } from 'react-router-dom';
+import firebase from '../../firebase';
 // import { useNavigate } from 'react-router-dom';
 // import {useLocation} from 'react-router-dom';
 // import { useEffect } from "react";
 // import { getAuth, onAuthStateChanged, signOut} from "firebase/auth";
 const Q50Q2 = () => {
+
+    const location = useLocation()
 
     var question = {
         1:{
@@ -194,12 +198,38 @@ const Q50Q2 = () => {
 
     function handleSubmit(){
 
+
+
         console.log(C)
 
         if(qnos.length === 0){
             if(ans === selected){
                 setScore(score+1)
+
+                const time = document.getElementById('counter').value
+                console.log(time,'rime')
+
+                const Users = firebase.firestore().collection("Users");
+
+                Users.doc(location.state.id).update({
+                    Time: firebase.firestore.FieldValue.serverTimestamp(),
+                    Score:score,
+                    // TimeTaken:time
+                })
+
+
             }
+
+            const time = document.getElementById('counter').innerHTML
+                console.log(time,'rime')
+
+                const Users = firebase.firestore().collection("Users");
+
+                Users.doc(location.state.id).update({
+                    Time: firebase.firestore.FieldValue.serverTimestamp(),
+                    Score:score,
+                    TimeTaken:time
+                })
     
             console.log('score=',score)
             return;

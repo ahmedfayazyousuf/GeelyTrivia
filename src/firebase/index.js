@@ -10,13 +10,13 @@ import "firebase/compat/firestore"
 // Your web app's Firebase configuration
 // For Firebase JS SDK v7.20.0 and later, measurementId is optional
 const firebaseConfig = {
-  apiKey: "AIzaSyBZkqJePYQK6YuWKyVDp-0PtzUVbi9kyaM",
-  authDomain: "geely-d536b.firebaseapp.com",
-  projectId: "geely-d536b",
-  storageBucket: "geely-d536b.appspot.com",
-  messagingSenderId: "159489468513",
-  appId: "1:159489468513:web:6f90e3ab011020c94ae220",
-  measurementId: "G-C8JBSKDH9V"
+  apiKey: "AIzaSyBgBbU3PDC0YlGSCVPI4ACIz82e_HWONLY",
+  authDomain: "geelytri.firebaseapp.com",
+  projectId: "geelytri",
+  storageBucket: "geelytri.appspot.com",
+  messagingSenderId: "459865955171",
+  appId: "1:459865955171:web:70c0f6d37c3240298c5156",
+  measurementId: "G-7CG13M2257"
 };
 
 // Initialize Firebase

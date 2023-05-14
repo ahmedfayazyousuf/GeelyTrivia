@@ -1,18 +1,18 @@
 import logo2 from '../Styles&Assets/logo2.png';
-// import { useNavigate } from "react-router-dom";
-// import { useState } from 'react';
-// import firebase from '../../firebase';
+import { useNavigate } from "react-router-dom";
+import { useState } from 'react';
+import firebase from '../../firebase';
 import '../Styles&Assets/style.css';
 import frame from '../Styles&Assets/LockupFrame.png'
 
 const Registration = () =>{
 
-    // const history = useNavigate();
+    const history = useNavigate();
 
-    // const [select, setSelect] = useState('')
+    const [select, setSelect] = useState('')
 
-    // // eslint-disable-next-line
-    // let firstname, value, gender;
+    // eslint-disable-next-line
+    let firstname, value, gender;
 
     // // eslint-disable-next-line
     // function onlyOnetwo(e) {
@@ -50,58 +50,50 @@ const Registration = () =>{
 
     function handleSubmit(){
 
-        // const Users = firebase.firestore().collection("Guest");
+        const Users = firebase.firestore().collection("Users");
 
-        // const name = document.getElementById('Name').value
-        // const email = document.getElementById('email').value
-        // const number = document.getElementById('no').value
-        // // const Gender = document.getElementById('work').value
-        // // eslint-disable-next-line
-        // const type = "Guest"
+        const name = document.getElementById('Name').value
+        const email = document.getElementById('email').value
+        const number = document.getElementById('no').value
+        // const Gender = document.getElementById('work').value
+        // eslint-disable-next-line
+        const type = "Guest"
 
-        // var length = document.getElementById("Name").value.length
-        // var validRegex =   /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/
+        var length = document.getElementById("Name").value.length
+        var validRegex =   /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/
         
-        // if (document.getElementById("Name").value === "" ||  length < 3)
-        // {
-        //     document.getElementById("error").innerHTML = "PLEASE ENTER A VALID NAME"
-        //     return;
-        // }
+        if (document.getElementById("Name").value === "" ||  length < 3)
+        {
+            document.getElementById("error").innerHTML = "PLEASE ENTER A VALID NAME"
+            return;
+        }
 
-        // if (document.getElementById("email").value === "" || document.getElementById("email").value.match(!validRegex))
-        // {
-        //     document.getElementById("error").innerHTML = "PLEASE ENTER A VALID EMAIL"
-        //     return;
-        // }
+        if (document.getElementById("email").value === "" || document.getElementById("email").value.match(!validRegex))
+        {
+            document.getElementById("error").innerHTML = "PLEASE ENTER A VALID EMAIL"
+            return;
+        }
 
-        // if (document.getElementById("no").value === "" || document.getElementById("no").value.length > 13 || document.getElementById("no").value.length < 9)
-        // {
-        //     document.getElementById("error").innerHTML = "PLEASE ENTER A VALID PHONE NUMBER";
-        //     return;
-        // }
+        if (document.getElementById("no").value === "" || document.getElementById("no").value.length > 13 || document.getElementById("no").value.length < 9)
+        {
+            document.getElementById("error").innerHTML = "PLEASE ENTER A VALID PHONE NUMBER";
+            return;
+        }
 
-        // else{
-        //     Users.add({
-        //         Name:name,
-        //         Email:email,
-        //         Number:number,
-        //         Time: firebase.firestore.FieldValue.serverTimestamp()
-        //         // Gender:Gender
-        //     })
-        //     console.log(name,email,number,select)
-        //     history("/success");
-
-        //     fetch('https://geelyrsvpserver.azurewebsites.net/send_mail', {
-        //         method: "POST",
-        //         headers: {
-        //             "Content-Type": "application/json"
-        //         },
-        //         body:JSON.stringify({ 
-        //             // name: name doesnt need to be written because its the same name
-        //             type,email
-        //         })
-        //     })
-        // }
+        else{
+            Users.add({
+                Name:name,
+                Email:email,
+                Number:number,
+                Time: firebase.firestore.FieldValue.serverTimestamp()
+                // Gender:Gender
+            }).then(doc =>{
+                history("/question",{state:{id:doc.id}})
+                
+            })
+            console.log(name,email,number,select)
+           ;
+        }
     
     }
 
