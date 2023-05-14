@@ -83,10 +83,8 @@ const Q50Q2 = () => {
 
 
         var qn = question[qno]
-        console.log(  qn.Options[1] ) 
 
         setQnos(temp)
-        setC(C+1)
 
         console.log(C,'count')
     
@@ -202,7 +200,6 @@ const Q50Q2 = () => {
 
 
         var qn = question[qno]
-        console.log(  qn.Options[1] ) 
 
         setQnos(temp)
 
