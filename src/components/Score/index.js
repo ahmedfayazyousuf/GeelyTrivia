@@ -4,9 +4,10 @@ import frame from '../Styles&Assets/LockupFrame.png'
 // import { useNavigate } from 'react-router-dom';
 // import {useLocation} from 'react-router-dom';
 // import firebase from '../../firbase';
+import { useLocation } from 'react-router-dom';
 
 const Score = () => {
-    // const location = useLocation();
+    const location = useLocation();
     // const navigate = useNavigate();
     //     function Handleclick(e){
             
@@ -49,12 +50,12 @@ const Score = () => {
 
                         <div style={{display: 'flex', flexDirection: 'row', justifyContent: 'center', alignItems:'center'}} id='slotparent'>
                             <p style={{color: 'white'}}>CORRECT</p>
-                            <p style={{color: 'white', marginLeft: '15px'}}>4</p>
+                            <p style={{color: 'white', marginLeft: '15px'}}>{location.state.score}</p>
                         </div>
 
                         <div style={{display: 'flex', flexDirection: 'row', justifyContent: 'center', alignItems:'center'}} id='slotparent'>
                             <p style={{color: 'white'}}>INCORRECT</p>
-                            <p style={{color: 'white', marginLeft: '15px'}}>1</p>
+                            <p style={{color: 'white', marginLeft: '15px'}}>{(3-location.state.score)}</p>
                         </div>
                     </div>
 

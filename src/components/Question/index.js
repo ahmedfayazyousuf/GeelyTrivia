@@ -3,7 +3,7 @@ import logo2 from '../Styles&Assets/logo2.png';
 import frame from '../Styles&Assets/LockupFrame.png'
 import React, { useEffect } from "react";
 import { useState } from "react"
-import { useLocation } from 'react-router-dom';
+import { useLocation, useNavigate } from 'react-router-dom';
 import firebase from '../../firebase';
 // import { useNavigate } from 'react-router-dom';
 // import {useLocation} from 'react-router-dom';
@@ -12,6 +12,7 @@ import firebase from '../../firebase';
 const Q50Q2 = () => {
 
     const location = useLocation()
+    const history = useNavigate()
 
     var question = {
         1:{
@@ -74,7 +75,20 @@ const Q50Q2 = () => {
             console.log('im jhere')
             $("#counter").html(count--);
             if(count == -1){
+                
                 clearInterval(timer);
+                const time = document.getElementById('counter').innerHTML
+                console.log(time,'rime')
+
+                const Users = firebase.firestore().collection("Users");
+
+                Users.doc(location.state.id).update({
+                    Time: firebase.firestore.FieldValue.serverTimestamp(),
+                    Score:score,
+                    TimeTaken:time
+                })
+
+                history('/score',{state:{score:score}})
             } 
         }, 1000);
 
@@ -217,6 +231,8 @@ const Q50Q2 = () => {
                     // TimeTaken:time
                 })
 
+                history('/score',{state:{score:score+1}})
+
 
             }
 
@@ -232,6 +248,7 @@ const Q50Q2 = () => {
                 })
     
             console.log('score=',score)
+            history('/score',{state:{score:score}})
             return;
 
             
