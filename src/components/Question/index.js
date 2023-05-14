@@ -77,12 +77,13 @@ const Q50Q2 = () => {
           }
 
           console.log(temp)
+          console.log('qno',)
 
 
 
 
 
-        var qn = question[qno]
+        var qn = question[qnos[qno]]
 
         setQnos(temp)
 
@@ -199,7 +200,7 @@ const Q50Q2 = () => {
 
 
 
-        var qn = question[qno]
+        var qn = question[qnos[qno]]
 
         setQnos(temp)
 
