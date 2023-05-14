@@ -71,11 +71,11 @@ const Q50Q2 = () => {
 
     useEffect(()=>{
         var count = 60, timer = setInterval(function() {
+            console.log('im jhere')
             $("#counter").html(count--);
-            // eslint-disable-next-line
             if(count == -1){
-                console.log('gameover')
-            } clearInterval(timer);
+                clearInterval(timer);
+            } 
         }, 1000);
 
         var qno = Math.floor(Math.random() * (qnos.length-1)) + 0
