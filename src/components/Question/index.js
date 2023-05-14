@@ -66,7 +66,7 @@ const Q50Q2 = () => {
             if(count == -1) clearInterval(timer);
         }, 1000);
 
-        var qno = Math.floor(Math.random() * 3) + 1
+        var qno = Math.floor(Math.random() * 2) + 0
 
         var temp = qnos
 
@@ -82,7 +82,7 @@ const Q50Q2 = () => {
 
 
 
-
+            // console.log(qnos[0],'llll')
         var qn = question[qnos[qno]]
 
         setQnos(temp)
@@ -184,7 +184,7 @@ const Q50Q2 = () => {
             return;
         }
 
-        var qno = Math.floor(Math.random() * (3-C)) + 1
+        var qno = Math.floor(Math.random() * (2-C)) + 0
 
         var temp = qnos
 
