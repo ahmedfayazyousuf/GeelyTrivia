@@ -5,6 +5,7 @@ import React, { useEffect } from "react";
 import { useState } from "react"
 import { useLocation, useNavigate } from 'react-router-dom';
 import firebase from '../../firebase';
+import { getElementError } from '@testing-library/react';
 // import { useNavigate } from 'react-router-dom';
 // import {useLocation} from 'react-router-dom';
 // import { useEffect } from "react";
@@ -45,15 +46,16 @@ const Q50Q2 = () => {
             },
             "Answer":3
         },
-        // 4:{
-        //     "Question":"Which Geely products will be launched as the first batch in the UAE market? ",
-        //     "Options":{
-        //         1:"Coolray",
-        //         2:"Emgrand",
-        //         3:"Geometry C",
-        //     },
-        //     "Answer":1
-        // }
+        4:{
+            "Question":"Which Geely products will be launched as the first batch in the UAE market? ",
+            "Options":{
+                1:"Coolray",
+                2:"Emgrand",
+                3:"Geometry C",
+                4:""
+            },
+            "Answer":1
+        }
     }
 
     const [questionn, setQuestionn] = useState('')
@@ -61,7 +63,7 @@ const Q50Q2 = () => {
     const [opt2, setOpt2] = useState('')
     const [opt3, setOpt3] = useState('')
     const [opt4, setOpt4] = useState('')
-    const [qnos, setQnos] = useState([1,2,3])
+    const [qnos, setQnos] = useState([1,2,3,4])
     const [C,setC] = useState(0)
 
     const [score, setScore] = useState(0)
@@ -105,6 +107,13 @@ const Q50Q2 = () => {
 
             console.log(qnos[qno],'llll')
         var qn = question[qnos[qno]]
+
+        if(qnos[qno] === 4){
+            document.getElementById('option4').style.display = 'none'
+        }
+        else{
+            document.getElementById('option4').style.display = 'initial'
+        }
 
         console.log(C,'count')
     
@@ -271,7 +280,12 @@ const Q50Q2 = () => {
         console.log(qno)
 
 
-
+        if(qnos[qno] === 4){
+            document.getElementById('option4').style.display = 'none'
+        }
+        else{
+            document.getElementById('option4').style.display = 'initial'
+        }
 
 
 
