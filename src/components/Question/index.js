@@ -70,7 +70,7 @@ const Q50Q2 = () => {
 
         var temp = qnos
 
-        const index = temp.indexOf(qno);
+        const index = qno;
 
         if (index > -1) { // only splice array when item is found
             temp.splice(index, 1); // 2nd parameter means remove one item only
@@ -189,7 +189,7 @@ const Q50Q2 = () => {
 
         var temp = qnos
 
-        const index = temp.indexOf(qno);
+        const index = qno;
 
         if (index > -1) { // only splice array when item is found
             temp.splice(index, 1); // 2nd parameter means remove one item only
