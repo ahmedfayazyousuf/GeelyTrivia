@@ -57,7 +57,7 @@ const Q50Q2 = () => {
     const [opt3, setOpt3] = useState('')
     const [opt4, setOpt4] = useState('')
     const [qnos, setQnos] = useState([1,2,3])
-    const [C,setC] = useState(1)
+    const [C,setC] = useState(0)
 
     useEffect(()=>{
         var count = 60, timer = setInterval(function() {
@@ -66,26 +66,19 @@ const Q50Q2 = () => {
             if(count == -1) clearInterval(timer);
         }, 1000);
 
-        var qno = Math.floor(Math.random() * 2) + 0
+        var qno = Math.floor(Math.random() * (qnos.length-1)) + 0
 
         var temp = qnos
 
         const index = qno;
 
-        if (index > -1) { // only splice array when item is found
-            temp.splice(index, 1); // 2nd parameter means remove one item only
-          }
-
-          console.log(temp)
-          console.log('qno',)
 
 
 
 
-            // console.log(qnos[0],'llll')
+
+            console.log(qnos[qno],'llll')
         var qn = question[qnos[qno]]
-
-        setQnos(temp)
 
         console.log(C,'count')
     
@@ -101,6 +94,16 @@ const Q50Q2 = () => {
         setOpt2(qn.Options[2])
         setOpt3(qn.Options[3])
         setOpt4(qn.Options[4])
+
+        
+        if (index > -1) { // only splice array when item is found
+            temp.splice(index, 1); // 2nd parameter means remove one item only
+          }
+
+          console.log(temp)
+          console.log('qno',qno)
+
+        setQnos(temp)
     },[])
 
    
@@ -184,7 +187,9 @@ const Q50Q2 = () => {
             return;
         }
 
-        var qno = Math.floor(Math.random() * (2-C)) + 0
+
+        console.log(qnos.length-1)
+        var qno = Math.floor(Math.random() * (qnos.length-1)) + 0
 
         var temp = qnos
 
@@ -192,11 +197,7 @@ const Q50Q2 = () => {
 
         console.log(qno)
 
-        if (index > -1) { // only splice array when item is found
-            temp.splice(index, 1); // 2nd parameter means remove one item only
-          }
 
-          console.log(temp)
 
 
 
@@ -213,6 +214,12 @@ const Q50Q2 = () => {
         setOpt4(qn.Options[4])
 
         setC(C+1)
+
+        if (index > -1) { // only splice array when item is found
+            temp.splice(index, 1); // 2nd parameter means remove one item only
+          }
+
+          console.log(temp)
 
 
 
