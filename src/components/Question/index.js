@@ -1,13 +1,111 @@
 import $ from 'jquery';
 import logo2 from '../Styles&Assets/logo2.png';
 import frame from '../Styles&Assets/LockupFrame.png'
-import React from "react";
+import React, { useEffect } from "react";
 import { useState } from "react"
 // import { useNavigate } from 'react-router-dom';
 // import {useLocation} from 'react-router-dom';
 // import { useEffect } from "react";
 // import { getAuth, onAuthStateChanged, signOut} from "firebase/auth";
 const Q50Q2 = () => {
+
+    var question = {
+        1:{
+            "Question":"What is the country of origin for Geely Auto?",
+            "Options":{
+                1:"China",
+                2:"Japan",
+                3:"Germany",
+                4:"United States"
+            },
+            "Answer":1
+        },
+        2:{
+            "Question":"Geely Auto acquired an equity stake in which European car manufacturer in 2010?",
+            "Options":{
+                1:"Volvo Cars",
+                2:"Aston Martin",
+                3:"Mercedes",
+                4:"Lotus"
+            },
+            "Answer":1
+        },
+        3:{
+            "Question":"Geely Auto acquired a significant stake in which European car manufacturer? ",
+            "Options":{
+                1:"BMW",
+                2:"Volkswagan",
+                3:"Daimler AG",
+                4:"Renault"
+            },
+            "Answer":3
+        },
+        // 4:{
+        //     "Question":"Which Geely products will be launched as the first batch in the UAE market? ",
+        //     "Options":{
+        //         1:"Coolray",
+        //         2:"Emgrand",
+        //         3:"Geometry C",
+        //     },
+        //     "Answer":1
+        // }
+    }
+
+    const [questionn, setQuestionn] = useState('')
+    const [opt1, seOpt1] = useState('')
+    const [opt2, setOpt2] = useState('')
+    const [opt3, setOpt3] = useState('')
+    const [opt4, setOpt4] = useState('')
+    const [qnos, setQnos] = useState([1,2,3])
+    const [C,setC] = useState(1)
+
+    useEffect(()=>{
+        var count = 60, timer = setInterval(function() {
+            $("#counter").html(count--);
+            // eslint-disable-next-line
+            if(count == -1) clearInterval(timer);
+        }, 1000);
+
+        var qno = Math.floor(Math.random() * 3) + 1
+
+        var temp = qnos
+
+        const index = temp.indexOf(qno);
+
+        if (index > -1) { // only splice array when item is found
+            temp.splice(index, 1); // 2nd parameter means remove one item only
+          }
+
+          console.log(temp)
+
+
+
+
+
+        var qn = question[qno]
+        console.log(  qn.Options[1] ) 
+
+        setQnos(temp)
+        setC(C+1)
+
+        console.log(C,'count')
+    
+    
+        // document.getElementById('qn').innerHTML = qn.Question
+        // document.getElementById('option1').innerHTML = qn.Options[1]
+        // document.getElementById('option2').innerHTML = qn.Options[2]
+        // document.getElementById('option3').innerHTML = qn.Options[3]
+        // document.getElementById('option4').innerHTML = qn.Options[4]
+    
+        setQuestionn(qn.Question)
+        seOpt1(qn.Options[1])
+        setOpt2(qn.Options[2])
+        setOpt3(qn.Options[3])
+        setOpt4(qn.Options[4])
+    },[])
+
+   
+
     // const location = useLocation();
     // const navigate = useNavigate();
     // eslint-disable-next-line
@@ -20,16 +118,12 @@ const Q50Q2 = () => {
     //             navigate(`/`); //If User is not logged in, redirect to login page
     //           }
     //           else{
-    //             console.log(user)
+    //             console.log(user)   
     //           }
     //     });
     // },[])
 
-    var count = 60, timer = setInterval(function() {
-        $("#counter").html(count--);
-        // eslint-disable-next-line
-        if(count == -1) clearInterval(timer);
-    }, 1000);
+    
 
     function Handleclick(e){
         if(e === 'option1'){
@@ -84,6 +178,45 @@ const Q50Q2 = () => {
 
 
     function handleSubmit(){
+
+        console.log(C)
+
+        if(C === 3){
+            return;
+        }
+
+        var qno = Math.floor(Math.random() * (3-C)) + 1
+
+        var temp = qnos
+
+        const index = temp.indexOf(qno);
+
+        if (index > -1) { // only splice array when item is found
+            temp.splice(index, 1); // 2nd parameter means remove one item only
+          }
+
+          console.log(temp)
+
+
+
+
+
+        var qn = question[qno]
+        console.log(  qn.Options[1] ) 
+
+        setQnos(temp)
+
+        setQuestionn(qn.Question)
+        seOpt1(qn.Options[1])
+        setOpt2(qn.Options[2])
+        setOpt3(qn.Options[3])
+        setOpt4(qn.Options[4])
+
+        setC(C+1)
+
+
+
+        
         // if(bool === false){
         //     if(location.state.count === 2){
 
@@ -158,15 +291,15 @@ return(
             <p style={{color: 'white', fontSize: '16px', marginBottom: '-5px'}}>Time: <span className='counter' id='counter'>60</span> Seconds</p>
 
             <div style={{display: 'flex', flexDirection: 'column', textAlign: 'center', margin: '0', padding: '0', paddingLeft: '30px', paddingRight: '30px'}} >
-                <p style={{fontSize: '15px', color: 'white'}} >What is the country of origin for Geely Auto? </p>
-            </div>
+                <p id='qn' style={{fontSize: '15px', color: 'white'}} > {questionn}</p>
+            </div>  
 
             <div className="slotparent"  style={{display: 'flex', flexDirection: 'column', justifyContent: 'center', alignItems:'center', width: '100%', marginTop: '15px'}}>
                     <div className="slotdiv" style={{display: 'flex', flexDirection: 'column', justifyContent: 'center', alignItems:'center', width: '90%', overflowX:'hidden'}} id='slotparent'>
-                        <button className="grab" id="option1" onClick={() => {Handleclick("option1")}} value="option1" style={{width:"280px", margin: '5px', border:'1px solid white', borderRadius: '20px', padding: '10px', color: 'white', backgroundColor: 'transparent', cursor: 'grab'}}>China</button>
-                        <button className="grab" id="option2" onClick={() => {Handleclick("option2")}} value="option2" style={{width:"280px", margin: '5px', border:'1px solid white', borderRadius: '20px', padding: '10px', color: 'white', backgroundColor: 'transparent', cursor: 'grab'}}>Japan</button>
-                        <button className="grab" id="option3" onClick={() => {Handleclick("option3")}} value="option3" style={{width:"280px", margin: '5px', border:'1px solid white', borderRadius: '20px', padding: '10px', color: 'white', backgroundColor: 'transparent', cursor: 'grab'}}>Germany</button>
-                        <button className="grab" id="option4" onClick={() => {Handleclick("option4")}} value="option4" style={{width:"280px", margin: '5px', border:'1px solid white', borderRadius: '20px', padding: '10px', color: 'white', backgroundColor: 'transparent', cursor: 'grab'}}>United States</button>
+                        <button className="grab" id="option1" onClick={() => {Handleclick("option1")}} value="option1" style={{width:"280px", margin: '5px', border:'1px solid white', borderRadius: '20px', padding: '10px', color: 'white', backgroundColor: 'transparent', cursor: 'grab'}}>{opt1}</button>
+                        <button className="grab" id="option2" onClick={() => {Handleclick("option2")}} value="option2" style={{width:"280px", margin: '5px', border:'1px solid white', borderRadius: '20px', padding: '10px', color: 'white', backgroundColor: 'transparent', cursor: 'grab'}}>{opt2}</button>
+                        <button className="grab" id="option3" onClick={() => {Handleclick("option3")}} value="option3" style={{width:"280px", margin: '5px', border:'1px solid white', borderRadius: '20px', padding: '10px', color: 'white', backgroundColor: 'transparent', cursor: 'grab'}}>{opt3}</button>
+                        <button className="grab" id="option4" onClick={() => {Handleclick("option4")}} value="option4" style={{width:"280px", margin: '5px', border:'1px solid white', borderRadius: '20px', padding: '10px', color: 'white', backgroundColor: 'transparent', cursor: 'grab'}}>{opt4}</button>
                     </div>
 
                 <button className="grab" style={{backgroundColor: '#002277', color: 'white', width: '150px', height: '37px' , border: '1px solid white', cursor: 'grab', marginTop: '20px'}} onClick={handleSubmit}>NEXT</button>
