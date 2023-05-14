@@ -181,7 +181,7 @@ const Q50Q2 = () => {
 
         console.log(C)
 
-        if(C === 3){
+        if(C === 4){
             return;
         }
 
