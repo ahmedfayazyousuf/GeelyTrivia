@@ -57,7 +57,7 @@ const Q50Q2 = () => {
     const [opt3, setOpt3] = useState('')
     const [opt4, setOpt4] = useState('')
     const [qnos, setQnos] = useState([1,2,3])
-    const [C,setC] = useState(1)
+    const [C,setC] = useState(0)
 
     useEffect(()=>{
         var count = 60, timer = setInterval(function() {
@@ -180,7 +180,7 @@ const Q50Q2 = () => {
 
         console.log(C)
 
-        if(C === 4){
+        if(C === 3){
             return;
         }
 
