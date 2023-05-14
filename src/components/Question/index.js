@@ -180,7 +180,7 @@ const Q50Q2 = () => {
 
         console.log(C)
 
-        if(C === 3){
+        if(qnos.length === 0){
             return;
         }
 
@@ -189,6 +189,8 @@ const Q50Q2 = () => {
         var temp = qnos
 
         const index = qno;
+
+        console.log(qno)
 
         if (index > -1) { // only splice array when item is found
             temp.splice(index, 1); // 2nd parameter means remove one item only
