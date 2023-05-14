@@ -27,6 +27,7 @@ const Q50Q2 = () => {
 
     var count = 60, timer = setInterval(function() {
         $("#counter").html(count--);
+        // eslint-disable-next-line
         if(count == -1) clearInterval(timer);
     }, 1000);
 
