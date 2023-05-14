@@ -74,7 +74,6 @@ const Q50Q2 = () => {
 
     useEffect(()=>{
         var count = 60, timer = setInterval(function() {
-            console.log('im jhere')
             $("#counter").html(count--);
             if(count == -1){
                 
