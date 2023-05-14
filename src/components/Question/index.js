@@ -59,6 +59,12 @@ const Q50Q2 = () => {
     const [qnos, setQnos] = useState([1,2,3])
     const [C,setC] = useState(0)
 
+    const [score, setScore] = useState(0)
+
+    const [selected, setSelected] = useState(0)
+
+    const[ans, setAns] = useState(0)
+
     useEffect(()=>{
         var count = 60, timer = setInterval(function() {
             $("#counter").html(count--);
@@ -94,6 +100,7 @@ const Q50Q2 = () => {
         setOpt2(qn.Options[2])
         setOpt3(qn.Options[3])
         setOpt4(qn.Options[4])
+        setAns(qn.Answer)
 
         
         if (index > -1) { // only splice array when item is found
@@ -138,6 +145,7 @@ const Q50Q2 = () => {
             document.getElementById('option4').style.background = "transparent";
             document.getElementById('option4').style.color = "white";
             setBool(false);
+            setSelected(1)
         }
 
         if(e === 'option2'){
@@ -150,6 +158,7 @@ const Q50Q2 = () => {
             document.getElementById('option4').style.background = "transparent";
             document.getElementById('option4').style.color = "white";
             setBool(false);
+            setSelected(2)
         }
 
         if(e === 'option3'){
@@ -162,6 +171,7 @@ const Q50Q2 = () => {
             document.getElementById('option4').style.background = "transparent";
             document.getElementById('option4').style.color = "white";
             setBool(true);
+            setSelected(3)
         }
 
         if(e === 'option4'){
@@ -174,6 +184,7 @@ const Q50Q2 = () => {
             document.getElementById('option3').style.background = "transparent";
             document.getElementById('option3').style.color = "white";
             setBool(false);
+            setSelected(4)
         }
     }
 
@@ -184,8 +195,17 @@ const Q50Q2 = () => {
         console.log(C)
 
         if(qnos.length === 0){
+            console.log('score=',score)
             return;
+
+            
         }
+
+        if(ans === selected){
+            setScore(score+1)
+        }
+
+
 
 
         console.log(qnos.length-1)
@@ -212,6 +232,7 @@ const Q50Q2 = () => {
         setOpt2(qn.Options[2])
         setOpt3(qn.Options[3])
         setOpt4(qn.Options[4])
+        setAns(qn.Answer)
 
         setC(C+1)
 
