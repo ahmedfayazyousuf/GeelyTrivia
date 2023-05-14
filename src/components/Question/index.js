@@ -69,7 +69,9 @@ const Q50Q2 = () => {
         var count = 60, timer = setInterval(function() {
             $("#counter").html(count--);
             // eslint-disable-next-line
-            if(count == -1) clearInterval(timer);
+            if(count == -1){
+                console.log('gameover')
+            } clearInterval(timer);
         }, 1000);
 
         var qno = Math.floor(Math.random() * (qnos.length-1)) + 0
@@ -195,6 +197,10 @@ const Q50Q2 = () => {
         console.log(C)
 
         if(qnos.length === 0){
+            if(ans === selected){
+                setScore(score+1)
+            }
+    
             console.log('score=',score)
             return;
 
