@@ -66,7 +66,7 @@ const Q50Q2 = () => {
     const [qnos, setQnos] = useState([1,2,3,4])
     const [C,setC] = useState(0)
 
-    const [score, setScore] = useState(0)
+    const [score, setScore] = useState(0)   
 
     const [selected, setSelected] = useState(0)
 
@@ -227,8 +227,9 @@ const Q50Q2 = () => {
         if(qnos.length === 0){
             if(ans === selected){
                 setScore(score+1)
+                console.log('yay',score)
 
-                const time = document.getElementById('counter').value
+                const time = document.getElementById('counter').innerHTML
                 console.log(time,'rime')
 
                 const Users = firebase.firestore().collection("Users");
@@ -236,15 +237,14 @@ const Q50Q2 = () => {
                 Users.doc(location.state.id).update({
                     Time: firebase.firestore.FieldValue.serverTimestamp(),
                     Score:score+1,
-                    // TimeTaken:time
+                    TimeTaken:time
                 })
 
                 history('/score',{state:{score:score+1}})
 
 
-            }
-
-            const time = document.getElementById('counter').innerHTML
+            }else{
+                const time = document.getElementById('counter').innerHTML
                 console.log(time,'rime')
 
                 const Users = firebase.firestore().collection("Users");
@@ -257,13 +257,19 @@ const Q50Q2 = () => {
     
             console.log('score=',score)
             history('/score',{state:{score:score}})
+
+            }
+
+           
             return;
 
             
         }
 
         if(ans === selected){
+          
             setScore(score+1)
+            console.log('yay',score)
         }
 
         console.log(qnos.length-1)

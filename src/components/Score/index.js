@@ -80,7 +80,7 @@ const Score = () => {
                         </div>
 
                         <div style={{width: '50px'}}>
-                            <p style={{color: '#74B4F3', fontWeight: '900'}}>50</p>
+                            <p style={{color: '#74B4F3', fontWeight: '900'}}>{location.state.score}</p>
                         </div>
                     </div>
 
@@ -96,7 +96,7 @@ const Score = () => {
                         </div>
 
                         <div style={{width: '50px'}}>
-                            <p style={{color: '#74B4F3', fontWeight: '900'}}>50</p>
+                            <p style={{color: '#74B4F3', fontWeight: '900'}}>{(3-location.state.score)}</p>
                         </div>
                     </div>
 
@@ -112,7 +112,7 @@ const Score = () => {
                         </div>
 
                         <div style={{width: '50px'}}>
-                            <p style={{color: '#74B4F3', fontWeight: '900'}}>50</p>
+                            <p style={{color: '#74B4F3', fontWeight: '900'}}></p>
                         </div>
                     </div>
 
