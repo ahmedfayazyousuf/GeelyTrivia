@@ -511,7 +511,7 @@ return(
             <path
                 id="base-timer-path-remaining"
                 stroke-dasharray="283"
-                className="base-timer__path-remaining ${remainingPathColor}"
+                className="base-timer__path-remaining green ${remainingPathColor}"
                 d="
                 M 50, 50
                 m -45, 0
