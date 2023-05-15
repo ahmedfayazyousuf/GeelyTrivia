@@ -266,9 +266,6 @@ const Q50Q2 = () => {
             setScore(score+1)
         }
 
-
-
-
         console.log(qnos.length-1)
         var qno = Math.floor(Math.random() * (qnos.length-1)) + 0
 
@@ -390,10 +387,10 @@ return(
 
             <div className="slotparent"  style={{display: 'flex', flexDirection: 'column', justifyContent: 'center', alignItems:'center', width: '100%', marginTop: '15px'}}>
                     <div className="slotdiv" style={{display: 'flex', flexDirection: 'column', justifyContent: 'center', alignItems:'center', width: '90%', overflowX:'hidden'}} id='slotparent'>
-                        <button className="grab" id="option1" onClick={() => {Handleclick("option1")}} value="option1" style={{width:"280px", margin: '5px', border:'1px solid white', borderRadius: '20px', padding: '10px', color: 'white', backgroundColor: 'transparent', cursor: 'grab'}}>{opt1}</button>
-                        <button className="grab" id="option2" onClick={() => {Handleclick("option2")}} value="option2" style={{width:"280px", margin: '5px', border:'1px solid white', borderRadius: '20px', padding: '10px', color: 'white', backgroundColor: 'transparent', cursor: 'grab'}}>{opt2}</button>
-                        <button className="grab" id="option3" onClick={() => {Handleclick("option3")}} value="option3" style={{width:"280px", margin: '5px', border:'1px solid white', borderRadius: '20px', padding: '10px', color: 'white', backgroundColor: 'transparent', cursor: 'grab'}}>{opt3}</button>
-                        <button className="grab" id="option4" onClick={() => {Handleclick("option4")}} value="option4" style={{width:"280px", margin: '5px', border:'1px solid white', borderRadius: '20px', padding: '10px', color: 'white', backgroundColor: 'transparent', cursor: 'grab'}}>{opt4}</button>
+                        <button className="grab" id="option1" onClick={() => {Handleclick("option1")}} value="option1" style={{width:"260px", margin: '5px', border:'1px solid white', padding: '10px', color: 'white', backgroundColor: 'transparent', cursor: 'grab'}}>{opt1}</button>
+                        <button className="grab" id="option2" onClick={() => {Handleclick("option2")}} value="option2" style={{width:"260px", margin: '5px', border:'1px solid white', padding: '10px', color: 'white', backgroundColor: 'transparent', cursor: 'grab'}}>{opt2}</button>
+                        <button className="grab" id="option3" onClick={() => {Handleclick("option3")}} value="option3" style={{width:"260px", margin: '5px', border:'1px solid white', padding: '10px', color: 'white', backgroundColor: 'transparent', cursor: 'grab'}}>{opt3}</button>
+                        <button className="grab" id="option4" onClick={() => {Handleclick("option4")}} value="option4" style={{width:"260px", margin: '5px', border:'1px solid white', padding: '10px', color: 'white', backgroundColor: 'transparent', cursor: 'grab'}}>{opt4}</button>
                     </div>
 
                 <button className="grab" style={{backgroundColor: '#002277', color: 'white', width: '150px', height: '37px' , border: '1px solid white', cursor: 'grab', marginTop: '20px'}} onClick={handleSubmit}>NEXT</button>
