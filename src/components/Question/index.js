@@ -194,11 +194,11 @@ const Q50Q2 = () => {
 
 
         var count = 60, timer = setInterval(function() {
-            $("#counter").html(count--);
+            $("#base-timer__label").html(count--);
             if(count == -1){
                 
                 clearInterval(timer);
-                const time = document.getElementById('counter').innerHTML
+                const time = document.getElementById('base-timer__label').innerHTML
                 console.log(time,'rime')
 
                 const Users = firebase.firestore().collection("Users");
@@ -349,7 +349,7 @@ const Q50Q2 = () => {
                 setScore(score+1)
                 console.log('yay',score)
 
-                const time = document.getElementById('counter').innerHTML
+                const time = document.getElementById('base-timer__label').innerHTML
                 console.log(time,'rime')
 
                 const Users = firebase.firestore().collection("Users");
@@ -364,7 +364,7 @@ const Q50Q2 = () => {
 
 
             }else{
-                const time = document.getElementById('counter').innerHTML
+                const time = document.getElementById('base-timer__label').innerHTML
                 console.log(time,'rime')
 
                 const Users = firebase.firestore().collection("Users");
@@ -505,7 +505,7 @@ return(
                 <h1 className="header" >TRIVIA GAME</h1>
             </div>
 
-            {/* <p style={{color: 'white', fontSize: '16px', marginBottom: '-5px'}}>Time: <span className='counter' id='counter'>60</span> Seconds</p> */}
+            {/* <p style={{color: 'white', fontSize: '16px', marginBottom: '-5px'}}>Time: <span className='base-timer__label' id='base-timer__label'>60</span> Seconds</p> */}
             
             <div id="app"></div>
 
