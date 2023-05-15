@@ -240,7 +240,7 @@ const Q50Q2 = () => {
                     TimeTaken:time
                 })
 
-                history('/score',{state:{score:score+1}})
+                history('/score',{state:{score:score+1,time:time}})
 
 
             }else{
@@ -256,7 +256,7 @@ const Q50Q2 = () => {
                 })
     
             console.log('score=',score)
-            history('/score',{state:{score:score}})
+            history('/score',{state:{score:score,time:time}})
 
             }
 

@@ -112,7 +112,7 @@ const Score = () => {
                         </div>
 
                         <div style={{width: '50px'}}>
-                            <p style={{color: '#74B4F3', fontWeight: '900'}}></p>
+                            <p style={{color: '#74B4F3', fontWeight: '900'}}>{60-location.state.time}</p>
                         </div>
                     </div>
 
