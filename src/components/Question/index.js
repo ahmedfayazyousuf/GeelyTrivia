@@ -115,14 +115,14 @@ const Q50Q2 = () => {
         timerInterval = setInterval(() => {
             timePassed = timePassed += 1;
             timeLeft = TIME_LIMIT - timePassed;
-            document.getElementById("base-timer-label").innerHTML = formatTime( 
+            document.getElementById("base-timer-label").innerHTML =  
             timeLeft
-            );
+            
             setCircleDasharray();
             setRemainingPathColor(timeLeft);
 
             if (timeLeft === 0) {
-                const time = document.getElementById('base-timer__label').innerHTML
+                const time = document.getElementById("base-timer-label").innerHTML
                 console.log(time,'rime')
 
                 const Users = firebase.firestore().collection("Users");
@@ -345,7 +345,7 @@ const Q50Q2 = () => {
                 setScore(score+1)
                 console.log('yay',score)
 
-                const time = document.getElementById('base-timer__label').innerHTML
+                const time = document.getElementById('base-timer-label').innerHTML
                 console.log(time,'rime')
 
                 const Users = firebase.firestore().collection("Users");
@@ -360,7 +360,7 @@ const Q50Q2 = () => {
 
 
             }else{
-                const time = document.getElementById('base-timer__label').innerHTML
+                const time = document.getElementById('base-timer-label').innerHTML
                 console.log(time,'rime')
 
                 const Users = firebase.firestore().collection("Users");
@@ -521,9 +521,9 @@ return(
             ></path>
             </g>
         </svg>
-        <span id="base-timer-label" className="base-timer__label">{formatTime(
+        <span id="base-timer-label" className="base-timer__label">{
             timeLeft
-        )}</span>
+        }</span>
         </div>
             </div>
 
